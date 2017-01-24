@@ -38,6 +38,6 @@ COPY . c:/build
 # Restore packages, build, copy
 RUN nuget restore \
 && "c:\Program Files (x86)\MSBuild\14.0\Bin\MSBuild.exe" /maxcpucount:3  /p:Platform="Any CPU" /p:VisualStudioVersion=12.0 /p:VSToolsPath=c:\MSBuild.Microsoft.VisualStudio.Web.targets.14.0.0.3\tools\VSToolsPath AzureCourseAPI.sln \
-&& xcopy c:\build\AzureCourseAPI\* c:\inetpub\wwwroot /s
+&& xcopy "C:\Program Files (x86)\Jenkins\workspace\DockerPOCWebProject\*" c:\inetpub\wwwroot /s
 
 # NOT NEEDED ANYMORE –> ENTRYPOINT powershell .\InitializeContainer
